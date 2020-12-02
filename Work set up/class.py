@@ -70,7 +70,7 @@ def main():
 				if name.lower() in ("done", "thas it"):
 					break
 				else:
-					
+
 					openApp(name)
 					continue
 
@@ -80,8 +80,14 @@ def main():
 			time.sleep(1)
 			print("\n\n ****** BE PRODUCTIVE ***** \n\n")
 			time.sleep(1)
-			print("\n\n ****** DO NOT QUITE!***** \n\n")
-			time.sleep(2)
+			print("\n\n ****** But most importantly ***** \n\n")
+			time.sleep(1)
+			print("\n\n ****** DO ***** \n\n")
+			time.sleep(0.75)
+			print("\n\n ****** NOT ***** \n\n")
+			time.sleep(0.75)
+			print("\n\n ******!!!! QUIT !!!!***** \n\n")
+			time.sleep(4)
 			break	
 
 if __name__ == '__main__':
