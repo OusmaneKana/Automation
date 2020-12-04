@@ -6,7 +6,7 @@ import sys
 
 def openSite(domain):
 	for site in domain:
-		webbrowser.open("https:{}.com".format(site))
+		webbrowser.open("https:www.{}.com".format(site))
 
 def openFile(file): 
 	os.system("cd C:\\Users\\Ousmane Kana\\OneDrive - Houston Community College\\Fall 2020\\{} & start .".format(file))
@@ -41,15 +41,29 @@ def chooseClass():
 			lstSite = addi.split(',')
 			openSite(lstSite)
 
-def GenReport():
-	print("This is a quick report that gives you insight about your grades and what you need to do")
+
+def appClose():
+	time.sleep(1)
+	print("\n\n ****** ENJOY YOUR WORK ***** \n\n")
+	time.sleep(1)
+	print("\n\n ****** BE PRODUCTIVE ***** \n\n")
+	time.sleep(1)
+	print("\n\n ****** But most importantly ***** \n\n")
+	time.sleep(1)
+	print("\n\n ****** DO ***** \n\n")
+	time.sleep(0.75)
+	print("\n\n ****** NOT ***** \n\n")
+	time.sleep(0.75)
+	print("\n\n ******!!!! QUIT !!!!***** \n\n")
+	time.sleep(4)
+		
 
 
 def main():
 	
 	
 	while True:
-		task= input("\n\nWhat's up? \n\t - Class \n\t - Coding \n\t - Finances \n\t - Tools\n ------> ")
+		task= input("\n\nWhat's up? \n\t - Class \n\t - Coding \n\t - Finances \n\t - Tools \n\t - Tutoring \n------> ")
 		if task.lower()== "class":
 			chooseClass()
 
@@ -63,8 +77,7 @@ def main():
 			openSite(("bankofamerica","trello"))	
 
 		elif task.lower() =="tools":
-			print("SDFSDFSFDf")
-			
+		
 			while True:
 				name = input("What do you want open? \n ---->")
 				if name.lower() in ("done", "thas it"):
@@ -73,22 +86,20 @@ def main():
 
 					openApp(name)
 					continue
+		elif task.lower() in ('tutor', 'tutoring'):
+			os.system("cd C:\\Users\\Ousmane Kana\\AppData\\Roaming\\Zoom\\bin & start zoom.exe")
+			openSite(("classroom.google","desmos","gmail"))
+			os.system("cd C:\\Users\\Ousmane Kana\\OneDrive\\Finances & start tutoringPayBook.xlsx")
+			break
+
+
+
+
+
 
 		elif task.lower() in ("nothing", "done", "bye"):
-			time.sleep(1)
-			print("\n\n ****** ENJOY YOUR WORK ***** \n\n")
-			time.sleep(1)
-			print("\n\n ****** BE PRODUCTIVE ***** \n\n")
-			time.sleep(1)
-			print("\n\n ****** But most importantly ***** \n\n")
-			time.sleep(1)
-			print("\n\n ****** DO ***** \n\n")
-			time.sleep(0.75)
-			print("\n\n ****** NOT ***** \n\n")
-			time.sleep(0.75)
-			print("\n\n ******!!!! QUIT !!!!***** \n\n")
-			time.sleep(4)
-			break	
+			appClose()
+			
 
 if __name__ == '__main__':
 	main()

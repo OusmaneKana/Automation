@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Search Render</h1>
+
+    <h4>Add a new Creator</h4>
+    <input class='channel-input' type="text" placeholder="Put the search URL"/>
+    <button type='submit' onclick="submitChannel()"> Submit here </button>
+    <div class="container"></div>
+
+    <script>
+
+        function submitChannel() {
+            const channelURL = document.querySelector('.channel-input').value;
+            // sent shit to server
+
+            fetch('http://localhost:3000/creators',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+
+                body: JSON.stringify({channelURL})
+                })
+            
+        }
+
+        function newEl(type, attrs={}) {
+            const el = document.createElement(type);
+            for (let attr in attrs) {
+                const value = attrs[attr];
+                if (attr == 'innerText') el.innerText = value; 
+                else el.setAttribute(attr, value);
+            }
+            return el;
+            
+        }
+
+        async function loadCreators() {
+
+            const res = await fetch('http://localhost:3000/creators');
+
+            const creators = await res.json();
+
+
+            const ctr = document.querySelector('.container');
+
+            creators.forEach(creators => {
+                const card = newEl('div', { class: 'card' });
+                const title = newEl('h4', { innerText: creators.name });
+                const img = newEl('img', { src: creators.img });
+                card.appendChild(title);
+                card.appendChild(img);
+
+
+                ctr.appendChild(card);
+            })
+
+          
+            
+        }
+
+        loadCreators();
+
+        
+        
+
+
+    </script>
+
+    <style>
+        .container{
+            display: flex;
+            background-color: orange;
+
+        
+
+        }
+        .card{
+            margin: 28px;
+            padding: 20px;
+            background-color: blue;
+        }
+
+    </style>
+
+    
+</body>
+</html>
