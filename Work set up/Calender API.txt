@@ -1,0 +1,5 @@
+Client ID:
+8495667679-njmdvkvkhmc1875a8dfl7cmugk0s3c8d.apps.googleusercontent.com
+
+Client Secret:
+0GtvOzfnWQk2N5681EgA9WOn
