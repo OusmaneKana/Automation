@@ -44,11 +44,19 @@ def Calendar():
     events = events_result.get('items', [])
     todo =[]
 
+    # now = datetime.datetime.now()
+
+    
+    # print("The current date-time is Current Time =", now)
+
+
     # if not events:
     #     print('No upcoming events found.')
     # for event in events:
     #     start = event['start'].get('dateTime', event['start'].get('date'))
-    #     todo.append((start, event['summary']))
+    #     print((start, event['summary']))
+
+
 
     return events
 

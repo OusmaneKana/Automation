@@ -1,3 +1,4 @@
+import datetime
 import webbrowser
 import os
 import time
@@ -86,14 +87,24 @@ def appClose():
 
 def main():
 
+
 	if not todo:
 		print('No upcoming events found.')
 	for event in todo:
 		start = event['start'].get('dateTime', event['start'].get('date'))
-		print(start, event['summary'])
+
+		# tocome = datetime.datetime(int(start[0:4]), int(start[5:7]), int(start [8:10]), int(start[11:13]), int(start[14:16]), int(start[17:19]))
+		# print("The time of the next event is {}".format(tocome))
+		# now = datetime.datetime.now()
+
+		duration_left  = tocome - now
+
+		duration_left_mns = divmod(duration_left.total_seconds(), 60)[0]
+
+		print(f" {event['summary']} is in {duration_left}")
 
 
-	
+
 
 
 	while True:
