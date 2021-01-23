@@ -2,7 +2,7 @@ import webbrowser
 import os
 import time
 import sys
-
+from quickstart import *
 
 def openSite(domain):
 	for site in domain:
@@ -80,12 +80,22 @@ def appClose():
 	time.sleep(0.75)
 	print("\n\n ******!!!! QUIT !!!!***** \n\n")
 	time.sleep(4)
+
 		
 
 
 def main():
+
+	if not todo:
+		print('No upcoming events found.')
+	for event in todo:
+		start = event['start'].get('dateTime', event['start'].get('date'))
+		print(start, event['summary'])
+
+
 	
-	
+
+
 	while True:
 		task= input("\n\nWhat's up? \n\t - Class \n\t - Coding \n\t - Finances \n\t - Tools \n ----> ")
 		if task.lower()== "class":
@@ -118,6 +128,7 @@ def main():
 
 		elif task.lower() in ("nothing", "done", "bye"):
 			appClose()
+			break
 			
 
 if __name__ == '__main__':
