@@ -93,9 +93,9 @@ def main():
 	for event in todo:
 		start = event['start'].get('dateTime', event['start'].get('date'))
 
-		# tocome = datetime.datetime(int(start[0:4]), int(start[5:7]), int(start [8:10]), int(start[11:13]), int(start[14:16]), int(start[17:19]))
-		# print("The time of the next event is {}".format(tocome))
-		# now = datetime.datetime.now()
+		tocome = datetime.datetime(int(start[0:4]), int(start[5:7]), int(start [8:10]), int(start[11:13]), int(start[14:16]), int(start[17:19]))
+		print("The time of the next event is {}".format(tocome))
+		now = datetime.datetime.now()
 
 		duration_left  = tocome - now
 
