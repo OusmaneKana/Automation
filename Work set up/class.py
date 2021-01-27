@@ -15,6 +15,7 @@ def openApp(app):
 	os.system("start {}".format(app))
 
 def chooseClass():
+
 	webbrowser.open("https://portal.na.edu/ics")
 	webbrowser.open("https://www.office.com/")
 	zoom =input("Do you have an Online session Today ?__")
@@ -94,14 +95,23 @@ def main():
 		start = event['start'].get('dateTime', event['start'].get('date'))
 
 		tocome = datetime.datetime(int(start[0:4]), int(start[5:7]), int(start [8:10]), int(start[11:13]), int(start[14:16]), int(start[17:19]))
-		print("The time of the next event is {}".format(tocome))
+		
 		now = datetime.datetime.now()
 
 		duration_left  = tocome - now
 
 		duration_left_mns = divmod(duration_left.total_seconds(), 60)[0]
 
-		print(f" {event['summary']} is in {duration_left}")
+		#print(f"You have {event['summary']} is in {duration_left}")
+
+
+		if duration_left_mns <= 60:
+			print(f"You have {event['summary']} coming in {duration_left}\n")
+			print("Do you wanna open the specific tools for it ?")
+
+
+
+
 
 
 
