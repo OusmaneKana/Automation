@@ -19,16 +19,18 @@ class Class:
 		pass
 
 
-dataMining = Class("Data Mining", ("stackoverflow", "google", "github", ))
-systemProgramming = Class("Data Mining", ("stackoverflow", "google", "github", ))
-discreateMath = Class("Data Mining", ("stackoverflow", "google", "github", ))
-statistics =  Class("Data Mining", ("stackoverflow", "google", "github", ))
-programmingLanguagues = Class("Data Mining", ("stackoverflow", "google", "github",))
+# dataMining = Class("Data Mining", ("stackoverflow", "google", "github", ))
+# systemProgramming = Class("Data Mining", ("stackoverflow", "google", "github", ))
+# discreateMath = Class("Data Mining", ("stackoverflow", "google", "github", ))
+# statistics =  Class("Data Mining", ("stackoverflow", "google", "github", ))
+# programmingLanguagues = Class("Data Mining", ("stackoverflow", "google", "github",))
 
 taskrn = input("What do you have now ?")
 
-m = getattr(taskrn, 'openSite')
+class_ = getattr(classOOP, Class)
+instance = class_()
 
-m()
+klass = globals()["Class"]
 
+instance = klass()
 

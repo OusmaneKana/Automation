@@ -102,12 +102,13 @@ def main():
 
 		duration_left_mns = divmod(duration_left.total_seconds(), 60)[0]
 
-		#print(f"You have {event['summary']} is in {duration_left}")
+		print(f"You have {event['summary']} is in {duration_left}")
 
 
 		if duration_left_mns <= 60:
 			print(f"You have {event['summary']} coming in {duration_left}\n")
 			print("Do you wanna open the specific tools for it ?")
+
 
 
 
